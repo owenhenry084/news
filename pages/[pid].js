@@ -114,17 +114,7 @@ export async function getServerSideProps({ params, req, query }) {
         }
     }
   
- const isFb = req?.headers?.referer?.toLowerCase().includes("facebook")
 
- if(isFb&&pid){
-      return {
-          redirect: {
-              permanent: false,
-              destination: `https://${config.BLOG_URL}?p=${pid}`
-          }
-      }
-  }
- 
  
   let data;
   await dbConnect();
